@@ -39,5 +39,28 @@ describe('each()', () => {
     });
     expect(count).toBe(3);
   });
+
+  //arrayLikeObjectのはまりどころをイメージできていないのでもっといいテストがありそう
+  it('iterates every element of an empty array, passing that element, its corresponding index, and the entire array to the callback', () => {
+    const arr = [];
+    let count = 0;
+    _.each(arr, function(element, index, array) {
+      expect(element).toEqual(array[index]);
+      count += 1;
+    });
+    expect(count).toBe(0);
+  });
+
+  it('iterates every property of an length 0 array-like object, passing the value, the corresponding key, and the entire object to the callback', () => {
+    const obj = {
+      length: 0
+    };
+    let count = 0;
+    _.each(obj, function(value, key, iteratedObj) {
+      expect(value).toEqual(iteratedObj[key]);
+      count += 1;
+    });
+    expect(count).toBe(0);
+  });
 });
 

@@ -26,4 +26,9 @@ describe('indexOf()', () => {
     expect(_.indexOf(arr, 'bar', 2)).toBe(3);
   });
 
+  it('return -1 when input differentiate case', () => {
+    const arr = ['foo', 'Bar', 'foo', 'Foo'];
+    expect(_.indexOf(arr, 'bar')).toBe(-1)
+  });
+
 });

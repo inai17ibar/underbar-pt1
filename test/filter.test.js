@@ -6,6 +6,11 @@ describe('filter()', () => {
     expect(_.filter(nums, num => num % 2 === 1)).toEqual([5, 7, 11]);
   });
 
+  it('filters an empty array to odd numbers', () => {
+    const nums = [];
+    expect(_.filter(nums, num => num % 2 === 1)).toEqual([]);
+  });
+
   it('filters an object to only numeric values', () => {
     const characterAttributes = {
       name: 'Thokul Mongothsbeard',

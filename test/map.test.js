@@ -6,4 +6,10 @@ describe('map()', () => {
     const mappedArr = _.map(arr, (el) => el * el);
     expect(mappedArr).toEqual([1, 4, 9, 16, 25]);
   });
+
+  it('maps no elements in an empty array to their square', () => {
+    const arr = [];
+    const mappedArr = _.map(arr, (el) => el * el);
+    expect(mappedArr).toEqual([]);
+  });
 });

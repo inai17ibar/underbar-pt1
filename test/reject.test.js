@@ -18,4 +18,14 @@ describe('reject()', () => {
     const orderItems = _.reject(order, (value) => value === null);
     expect(orderItems).toEqual(['burger', 'ketchup', 'cookie']);
   });
+
+  it('return an empty array if rejects odd numbers from an odd array', () => {
+    const nums = [1, 3, 5];
+    expect(_.reject(nums, num => num % 2 === 1)).toEqual([]);
+  });
+
+  it('rejects odd numbers from an empty array', () => {
+    const nums = [];
+    expect(_.reject(nums, num => num % 2 === 1)).toEqual([]);
+  });
 });

@@ -13,4 +13,10 @@ describe('reduce()', () => {
     expect(result).toEqual(15);
   });
 
+  it('reduces an empty array', () => {
+    const nums = [];
+    const result = _.reduce(nums, (a, b) => a + b);
+    expect(result).toEqual(undefined);
+  });
+
 });

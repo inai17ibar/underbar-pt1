@@ -11,4 +11,8 @@ describe('some()', () => {
     expect(_.some(nums, num => num % 2 === 1)).toBe(false);
   });
 
+  it('return false if the array is an empty', () => {
+    const nums = [];
+    expect(_.some(nums, num => num % 2 == 1)).toBe(false);
+  });
 });
